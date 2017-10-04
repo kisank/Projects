@@ -1,0 +1,39 @@
+CS541_project2
+
+The project was to implement micro-facet BRDF.The project was implemented using the previous project
+and it has same control as the previous project. This was the first time I was working with light shader and
+I had small problem with the eye position in the shader.The problem was the eye position was calculated in the
+shader with worldview and the position was not calculated as expected.So I changed the calculation of eye
+position by using the inverse worldview matrix.Other than that I followed the instructions from the handout
+for the project.
+
+The values are also used from the handout,expect the value of I(intensity) which is 3.0 as I experimented
+with the values and found that it looks better with this value.
+
+Also the driving instructions from the project 1 is listed below:
+
+The default case for this project is Task 2.To change from task 2 to task 3 press '3' and to change back to
+task 2 press '2'.
+
+For default case:
+Rotate:To perform rotation in the scene press and hold left mouse button and move in left direction to rotate 
+right and vice versa. The reason choose this way was because it seemed natural movement which we usaully have 
+in mostly all interact navigation applications and websites.Spin can be perfomed by moving mouse in left or
+right direction and holding left mouse button. Tilt can be performed by moving mouse in up or down direction
+and holding left mouse button.
+
+Translate: To perform translate press and hold right mouse button and drag on left or right side to move in 
+respective directions.
+
+Zoom: To zoom in or out use mouse scroll(Middle mouse button) up or down to zoom in or out respectively.
+
+Window shape change: The aspect ratio of the window is changed whenever the size of window is changed so the
+scene does not look distorted.
+
+For first person camera case:
+
+Interactive navigations using Keyboard: Use 'w' to move ahead,'a' to move left,'s' to move back and 'd' to 
+move right(when facing in forward direction).
+
+Interactive navigations using Mouse:Hold left mouse button and drag in right direction to turn head left,
+drag in left to turn head right,drag up to turn head up and drag down to turn head down.
