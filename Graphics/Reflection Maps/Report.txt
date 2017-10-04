@@ -1,0 +1,19 @@
+CS541_Project 4
+
+The project was to implement the reflection maps using the lighting and shadow mapping done in the previous projects.
+The project was implemented using the previous project. The light position is too far from the scene so there are no
+reflections and shadow at the beginning. Once the light is zoomed in the reflections are seen on the teapot.
+Reflections dont need good light position as the shadows required in the previous projects however, for the 
+reflection of the shadows it is important to get a good lighting position.
+
+In this project, I used two fbos with 1024X1024 size. I did the project with 512X512 as I read somewhere that
+too many fbos with big sizes may reduce the efficiency of the program, however since this is just 3 my guess 
+is that it would work fine without any problem. Other than this I followed the handout and made some minor
+changes in the project code so the output looks fine. For the generation pass I used 1.0 instead of 0.9 for
+the calculation of the upper half of the teapot. I had to use a small shift for both the half because the 
+reflections were getting bloked by some other objects.
+
+While calculating the reflection, the teapot is not considered and that is done in object.cpp. I probably
+removed the sky from the scene as it was leaving a black line on the teapot during reflection and I think it
+did not look good. Because of this I could see two different reflections occuring in the scene with the black
+line separating them and after removing it the reflection looks more natural.
