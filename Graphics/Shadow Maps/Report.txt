@@ -1,0 +1,29 @@
+CS541_Project 3
+
+The project was to implement the shadow maps using using the lighting done in the previous project.The project
+was implemented using the previous project. In this project I got some issues regarding the shadow view matrix
+as I used glm to calculate the view matrix and the custom matrix is different from that we are using the
+project. It took me time to figure out that we did not had to transpose the glm matrix when passing in the
+shader. If I was passing the matrix as a transpose I was not getting the result as I wanted. For debugging
+purpose I did not use the FBO and commented out the light shader from the code to check if it was working
+correctly. After trying out few things I figured out the problem and passed the matrix with out transposing.
+
+I followed almost everything that was in the handout for this project but I made some minor changes in the 
+project which I think are giving me some better results than the one I got without using them. I changed the
+perspective matrix for the shadow calculations so that shadows do not go out of bounds. However, I do not know
+how to solve the problem of shadows dis appearing if the light was too close to the object and below the surface.
+In this particular situation the shadows suddenly disapper which are very close to the light. I tried solving 
+it but I could not do that.
+
+For removing the shadow acne, I experimented with some values which I used in the lighting shader ranging from
+0.1 to 0.00000001 and found the value which is used right now to be better fit to remove most of the acne.
+I also used Cull face front to get rid of the shadow that were covering half of the object even when there is
+no shadow on the object.
+
+For the FBO and shadow shader,they are initialized in the initialize scene in scene.cpp, I used 1024X1024 for
+FBO as the width and height as I think most of the values we use are in powers of 2.Apart from this, the 
+start of the light is far so light is to be moved closer to the scene so see the shadows. The shadow
+calculation is done for entire scene so I thought moving the light far away would be a better option to
+test. The program starts with light too far so there are no shadows at the beginning until light is in range.
+
+The input remains the same as it was in the previous project.
